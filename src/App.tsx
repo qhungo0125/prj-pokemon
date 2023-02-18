@@ -4,17 +4,18 @@ import "./App.css";
 
 import axios from "axios";
 import PokemonCollection from "./components/PokemonCollection/PokemonCollection";
-import { PokeFull } from "./interface";
+import { PokeFull, PokeFullAb } from "./interface";
 
 interface Poke {
   name: string;
   url: string;
 }
 
-const App: React.FC = () => {
-  const [pokes, setPokes] = react.useState<PokeFull[]>([]);
-  const [nextUrl, setNextUrl] = react.useState<string>("");
-  const [loading, setLoading] = react.useState<boolean>(true);
+function App(){
+  const [pokes, setPokes] = react.useState< Array<PokeFullAb> >([]);
+  const [nextUrl, setNextUrl] = react.useState("");
+  const [loading, setLoading] = react.useState(true);
+  const sended = react.useRef(true)
 
   const getPokes = async () => {
     const res = await axios.get(
@@ -34,7 +35,8 @@ const App: React.FC = () => {
   };
 
   react.useEffect(() => {
-    getPokes();
+    sended.current&& getPokes();
+    sended.current=false
   }, []);
 
   const handleLoadMore = async () => {

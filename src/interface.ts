@@ -5,3 +5,10 @@ export interface PokeFull{
       front_default: string
     }
   }
+
+export interface PokeFullAb extends PokeFull{
+  abilities?: {
+    name: string
+    ability: string
+  }[]
+}

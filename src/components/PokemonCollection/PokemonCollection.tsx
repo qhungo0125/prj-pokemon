@@ -1,10 +1,10 @@
 // rafce
 import React from 'react'
-import { PokeFull } from '../../interface'
+import { PokeFull, PokeFullAb } from '../../interface'
 import PokemonItem from '../PokemonItem/PokemonItem'
 
 interface Props{
-    pokemons: PokeFull[]
+    pokemons: PokeFullAb[]
 }
 
 const PokemonCollection:React.FC<Props> = (props) => {
@@ -13,13 +13,14 @@ const PokemonCollection:React.FC<Props> = (props) => {
 
   return (
     <div>
-        <section className='collection-container row mx-0'>
+        <section className='collection-container row mx-0 justify-content-between'>
             {pokemons.map(poke=>{
                 return(
                     <PokemonItem
                     key={poke.id}
                     id={poke.id}
                     name={poke.name}
+                    abilities= {poke.abilities}
                     image={poke.sprites.front_default}
                     />
                 )
