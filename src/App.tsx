@@ -59,11 +59,11 @@ function App(){
       <div className="container text-center">
         <PokemonCollection pokemons={pokes} />
         {loading ? (
-          <button className="btn btn-danger" disabled onClick={handleLoadMore}>
+          <button className="btn btn-danger my-4" disabled onClick={handleLoadMore}>
             loading
           </button>
         ) : (
-          <button className="btn btn-danger" onClick={handleLoadMore}>
+          <button className="btn btn-danger my-4" onClick={handleLoadMore}>
             load more
           </button>
         )}

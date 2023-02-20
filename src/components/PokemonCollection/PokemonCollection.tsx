@@ -1,5 +1,5 @@
 // rafce
-import React from 'react'
+import React, { useState } from 'react'
 import { PokeFull, PokeFullAb } from '../../interface'
 import PokemonItem from '../PokemonItem/PokemonItem'
 
