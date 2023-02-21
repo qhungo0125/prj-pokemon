@@ -1,0 +1,13 @@
+.header__cart:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.header__container{
+    height: 80px;
+    cursor: pointer;
+}
+
+.header__cart{
+    height: 80px;
+}

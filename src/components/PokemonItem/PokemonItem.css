@@ -1,0 +1,35 @@
+.pokemonItem:hover{
+    border: solid 0.5px;
+}
+
+.favorite__icon i{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.favorite__icon:hover i{
+    cursor: pointer;
+    opacity: 0.6;
+    color: red;
+}
+
+.pokemonItem.active{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pokemonItem__container{
+    height: 100vh;
+}
+
+.close__icon:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.pokemonItem{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #567e6c;
+}
+
+

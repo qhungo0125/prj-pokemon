@@ -1,4 +1,5 @@
 import React from "react";
+import { PokeFullAb } from "../interface";
 
 const context = React.createContext<AppContextValue>({});
 
@@ -10,13 +11,30 @@ interface AppContextValue {
   selectPokemon?: (pokeID: number) => void;
   closePokemon?: () => void;
   selectID?: number;
+  chooseToAddLiked?: (pokeID: number) => void;
+  liked?: Array<number>;
+  pokes?: Array<PokeFullAb>;
+  addPoke?: (poke: PokeFullAb) => void;
 }
 
 const AppContext = (props: Props) => {
   const { children } = props;
-  // const [isDark, setDark]=React.useState(false)
 
-  const [selectID, setSelectID] = React.useState(0);
+  const [pokes, setPokes] = React.useState<Array<PokeFullAb>>([]);
+
+  const [selectID, setSelectID] = React.useState(-1);
+  const [liked, setLiked] = React.useState<Array<number>>([]);
+
+  const addPoke = (poke: PokeFullAb) => {
+    console.log("add ", poke);
+
+    setPokes((p) => [...p, poke]);
+  };
+
+  const chooseToAddLiked = (pokeID: number) => {
+    liked.filter((item) => item === pokeID).length === 0 &&
+      setLiked([...liked, pokeID]);
+  };
 
   const selectPokemon = (pokeID: number) => {
     console.log("poke id: ", pokeID);
@@ -32,6 +50,10 @@ const AppContext = (props: Props) => {
     selectPokemon,
     closePokemon,
     selectID,
+    chooseToAddLiked,
+    liked,
+    pokes,
+    addPoke,
   };
 
   return <context.Provider value={appValue}>{children}</context.Provider>;

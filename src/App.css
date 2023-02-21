@@ -1,0 +1,17 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.main__container{
+    background-image: linear-gradient(#d61c59, #faac3d);
+}
+
+.main__container.blur{
+    /* opacity: 0.5; */
+}

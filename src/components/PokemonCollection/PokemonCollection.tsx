@@ -1,33 +1,38 @@
 // rafce
-import React, { useState } from 'react'
-import { PokeFull, PokeFullAb } from '../../interface'
-import PokemonItem from '../PokemonItem/PokemonItem'
+import React, { useState } from "react";
+import { context } from "../../context/AppContext";
+import { PokeFull, PokeFullAb } from "../../interface";
+import PokemonItem from "../PokemonItem/PokemonItem";
 
-interface Props{
-    pokemons: PokeFullAb[]
-}
+// interface Props {
+//   pokemons: PokeFullAb[] | undefined;
+// }
 
-const PokemonCollection:React.FC<Props> = (props) => {
-
-    const {pokemons} = props
+function PokemonCollection() {
+  // const { pokemons } = props;
+  const appValue = React.useContext(context);
+  console.log(appValue.pokes);
 
   return (
     <div>
-        <section className='collection-container row mx-0 justify-content-between'>
-            {pokemons.map(poke=>{
-                return(
-                    <PokemonItem
-                    key={poke.id}
-                    id={poke.id}
-                    name={poke.name}
-                    abilities= {poke.abilities}
-                    image={poke.sprites.front_default}
-                    />
-                )
-            })}
-        </section>
+      <div className="collection-container row mx-0 justify-content-between">
+        {appValue.pokes &&
+          appValue.pokes.map((poke) => {
+            return (
+              true && (
+                <PokemonItem
+                  key={poke.id}
+                  id={poke.id}
+                  name={poke.name}
+                  abilities={poke.abilities}
+                  image={poke.sprites.front_default}
+                />
+              )
+            );
+          })}
+      </div>
     </div>
-  )
+  );
 }
 
-export default PokemonCollection
+export default PokemonCollection;

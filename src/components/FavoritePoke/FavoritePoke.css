@@ -1,0 +1,21 @@
+.favorite__container{
+    display: none;
+    height: 100vh;
+    width: 25%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* animation: fadeIn 5s; */
+    opacity: 1;
+    /* transition: opacity 2s linear;   */
+}
+
+.favorite__container.active{
+    display: block;
+}
+
+.favorite__close i:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
