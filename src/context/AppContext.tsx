@@ -27,7 +27,7 @@ const AppContext = (props: Props) => {
   const [liked, setLiked] = React.useState<Array<number>>([]);
 
   const addPoke = (poke: PokeFullAb) => {
-    console.log("add ", poke);
+    // console.log("add ", poke);
 
     setPokes((p) => [...p, poke]);
   };

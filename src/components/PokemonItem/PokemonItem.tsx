@@ -1,21 +1,25 @@
 import React from "react";
 import { context } from "../../context/AppContext";
+import { PokeFullAb } from "../../interface";
 import "./PokemonItem.css";
 
 interface Props {
-  name: string;
-  image: string;
-  id: number;
-  abilities:
-    | {
-        name: string;
-        ability: string;
-      }[]
-    | undefined;
+  // name: string;
+  // image: string;
+  // id: number;
+  // abilities:
+  //   | {
+  //       name: string;
+  //       ability: string;
+  //     }[]
+  //   | undefined;
+  pokeInfo: PokeFullAb;
 }
 
 const PokemonItem = (props: Props) => {
-  const { name, image, id, abilities } = props;
+  const { name, id, abilities, weight, height, base_experience } =
+    props.pokeInfo;
+  const image = props.pokeInfo.sprites.front_default;
   const appValue = React.useContext(context);
 
   return (
@@ -45,16 +49,30 @@ const PokemonItem = (props: Props) => {
               </div>
 
               <div className="h-50">
-                <p className=" pokemon__name text-uppercase fs-4 fw-bold">
+                <p className=" pokemon__name text-uppercase fs-3 fw-bold">
                   {name}
                 </p>
-                <p className="text-capitalize fs-5">
-                  abilities:{" "}
+                <p className="text-capitalize fs-6">
+                  <span className="fw-bold">
+                    abilities({abilities?.length})
+                  </span>{" "}
                   {abilities
                     ?.map((ab: any, index: number) => {
-                      return ab.ability.name;
+                      return `${index + 1}. ${ab.ability.name}`;
                     })
-                    .join("; ")}
+                    .join("  ")}
+                </p>
+                <p className="text-capitalize fs-6">
+                  <span className="fw-bold">height</span>
+                  {" " + height}{" "}
+                </p>
+                <p className="text-capitalize fs-6">
+                  <span className="fw-bold">weight</span>
+                  {" " + weight}
+                </p>
+                <p className="text-capitalize fs-6">
+                  <span className="fw-bold">base exp</span>
+                  {" " + base_experience}
                 </p>
               </div>
             </div>
@@ -63,9 +81,9 @@ const PokemonItem = (props: Props) => {
       )}
 
       <div className="pokemonItem d-flex flex-column justify-content-between col-md-2 bg-light bg-gradient rounded m-2 align-items-center p-4">
-        <div className="row">
+        <div className="row justify-content-center">
           <img
-            style={{ maxHeight: "150px" }}
+            style={{ height: "150px", width: "150px" }}
             className="m-2"
             src={image}
             alt="pokemon"

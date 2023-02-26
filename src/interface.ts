@@ -11,4 +11,8 @@ export interface PokeFullAb extends PokeFull{
     name: string
     ability: string
   }[]
+
+  height?: number;
+  weight?: number;
+  base_experience?: number
 }

@@ -21,10 +21,11 @@ function PokemonCollection() {
             return (
               <PokemonItem
                 key={poke.id}
-                id={poke.id}
-                name={poke.name}
-                abilities={poke.abilities}
-                image={poke.sprites.front_default}
+                pokeInfo={poke}
+                // id={poke.id}
+                // name={poke.name}
+                // abilities={poke.abilities}
+                // image={poke.sprites.front_default}
               />
             );
           })}

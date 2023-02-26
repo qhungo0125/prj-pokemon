@@ -27,9 +27,10 @@ function ComChien() {
       const pokeData = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${poke.name}`
       );
+      //https://pokeapi.co/api/v2/gender/{id or name}/
       // console.log(pokeData.data);
-      // setPokes((p) => [...p, pokeData.data]);
-      console.log(appValue.addPoke);
+
+      // console.log(appValue.addPoke);
 
       appValue.addPoke && appValue.addPoke(pokeData.data);
 
