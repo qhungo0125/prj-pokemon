@@ -39,8 +39,8 @@ const PokemonItem = (props: Props) => {
             >
               <i className="bi bi-x fs-2"></i>
             </div>
-            <div className="row justify-content-center h-100 mt-4">
-              <div className="h-50 d-flex flex-row justify-content-center align-items-center">
+            <div className="row pokemon__select__container justify-content-center h-100 mt-4">
+              <div className="pokemon__img__container h-50 d-flex flex-row justify-content-center align-items-center">
                 <img
                   className="pokemon__img__select"
                   src={image}

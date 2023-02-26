@@ -18,16 +18,7 @@ function PokemonCollection() {
       <div className="collection-container row mx-0 justify-content-between">
         {appValue.pokes &&
           appValue.pokes.map((poke) => {
-            return (
-              <PokemonItem
-                key={poke.id}
-                pokeInfo={poke}
-                // id={poke.id}
-                // name={poke.name}
-                // abilities={poke.abilities}
-                // image={poke.sprites.front_default}
-              />
-            );
+            return <PokemonItem key={poke.id} pokeInfo={poke} />;
           })}
       </div>
     </div>

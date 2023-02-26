@@ -42,12 +42,12 @@ const AppContext = (props: Props) => {
   };
 
   const selectPokemon = (pokeID: number) => {
-    console.log("poke id: ", pokeID);
+    // console.log("poke id: ", pokeID);
     setSelectID(pokeID);
   };
 
   const closePokemon = () => {
-    console.log("closed");
+    // console.log("closed");
     setSelectID(-1);
   };
 

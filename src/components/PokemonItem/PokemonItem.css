@@ -37,4 +37,12 @@
     width: 200px;
 }
 
+.pokemon__img__container{
+    border-bottom: 1px solid #3E4042;
+}
+
+.pokemon__select__container{
+    max-width: 412px;
+}
+
 

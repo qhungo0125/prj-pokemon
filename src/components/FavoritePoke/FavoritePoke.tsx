@@ -5,7 +5,7 @@ import "./FavoritePoke.css";
 function FavoritePoke() {
   const appValue = React.useContext(context);
   const handleDeletePoke = (id: number) => {
-    console.log(id);
+    // console.log(id);
     appValue.deleteFromLiked && appValue.deleteFromLiked(id);
   };
   return (
@@ -29,7 +29,10 @@ function FavoritePoke() {
           (item) =>
             appValue.liked?.filter((likeItem) => likeItem === item.id).length !=
               0 && (
-              <div className="favorite__item m-2 rounded d-flex flex-row justify-content-between align-items-center">
+              <div
+                key={item.id}
+                className="favorite__item m-2 rounded d-flex flex-row justify-content-between align-items-center"
+              >
                 <div className="favorite__item__content d-flex flex-row align-items-center">
                   <img
                     className="favorite__item__img"

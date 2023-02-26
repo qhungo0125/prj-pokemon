@@ -53,7 +53,7 @@ function ComChien() {
       const pokeData = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${poke.name}`
       );
-      console.log(pokeData.data);
+      // console.log(pokeData.data);
       // setPokes((p) => [...p, pokeData.data]);
       appValue.addPoke && appValue.addPoke(pokeData.data);
       setLoading(false);
