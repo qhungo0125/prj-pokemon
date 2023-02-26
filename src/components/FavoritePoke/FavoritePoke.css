@@ -9,6 +9,9 @@
     /* animation: fadeIn 5s; */
     opacity: 1;
     /* transition: opacity 2s linear;   */
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* background-color: #567e6c; */
 }
 
 .favorite__container.active{
@@ -18,4 +21,13 @@
 .favorite__close i:hover{
     cursor: pointer;
     opacity: 0.5;
+}
+.favorite__item{
+    background-color: rgb(197, 197, 197);
+    border: 1px solid black;
+}
+
+.favorite__item__img{
+    width: 120px;
+    height: 120px;
 }

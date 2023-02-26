@@ -15,6 +15,7 @@ interface AppContextValue {
   liked?: Array<number>;
   pokes?: Array<PokeFullAb>;
   addPoke?: (poke: PokeFullAb) => void;
+  deleteFromLiked?: (pokeID: number) => void;
 }
 
 const AppContext = (props: Props) => {
@@ -36,6 +37,10 @@ const AppContext = (props: Props) => {
       setLiked([...liked, pokeID]);
   };
 
+  const deleteFromLiked = (pokeID: number) => {
+    setLiked(liked.filter((item) => item != pokeID));
+  };
+
   const selectPokemon = (pokeID: number) => {
     console.log("poke id: ", pokeID);
     setSelectID(pokeID);
@@ -54,6 +59,7 @@ const AppContext = (props: Props) => {
     liked,
     pokes,
     addPoke,
+    deleteFromLiked,
   };
 
   return <context.Provider value={appValue}>{children}</context.Provider>;

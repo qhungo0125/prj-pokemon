@@ -35,19 +35,28 @@ const PokemonItem = (props: Props) => {
             >
               <i className="bi bi-x fs-2"></i>
             </div>
-            <div className="row justify-content-center">
-              <img className="m-2 w-50 h-50" src={image} alt="pokemon" />
-              <p className=" pokemon__name text-uppercase fs-4 fw-bold">
-                {name}
-              </p>
-              <p className="text-capitalize fs-5">
-                abilities:{" "}
-                {abilities
-                  ?.map((ab: any, index: number) => {
-                    return ab.ability.name;
-                  })
-                  .join("; ")}
-              </p>
+            <div className="row justify-content-center h-100 mt-4">
+              <div className="h-50 d-flex flex-row justify-content-center align-items-center">
+                <img
+                  className="pokemon__img__select"
+                  src={image}
+                  alt="pokemon"
+                />
+              </div>
+
+              <div className="h-50">
+                <p className=" pokemon__name text-uppercase fs-4 fw-bold">
+                  {name}
+                </p>
+                <p className="text-capitalize fs-5">
+                  abilities:{" "}
+                  {abilities
+                    ?.map((ab: any, index: number) => {
+                      return ab.ability.name;
+                    })
+                    .join("; ")}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -62,21 +71,11 @@ const PokemonItem = (props: Props) => {
             alt="pokemon"
           />
           <p className=" pokemon__name text-uppercase fs-5 fw-bold">{name}</p>
-          {/* <p className="">
-            abilities:{" "}
-            {abilities
-              ?.map((ab: any, index: number) => {
-                return ab.ability.name;
-              })
-              .join("; ")}
-          </p> */}
         </div>
 
         <div className="d-flex flex-column align-items-center">
           <button
             onClick={(e) => {
-              // oldTop.current = window.screenX;
-
               appValue.selectPokemon && appValue.selectPokemon(id);
             }}
             className="btn btn-success text-uppercase m-2"
@@ -90,7 +89,7 @@ const PokemonItem = (props: Props) => {
               <i
                 className="bi bi-heart-fill fs-4 text-danger"
                 onClick={(e) => {
-                  appValue.chooseToAddLiked && appValue.chooseToAddLiked(id);
+                  appValue.deleteFromLiked && appValue.deleteFromLiked(id);
                 }}
               ></i>
               <p className="text-capitalize my-0">Added</p>

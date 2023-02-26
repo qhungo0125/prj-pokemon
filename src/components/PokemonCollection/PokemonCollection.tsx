@@ -11,7 +11,7 @@ import PokemonItem from "../PokemonItem/PokemonItem";
 function PokemonCollection() {
   // const { pokemons } = props;
   const appValue = React.useContext(context);
-  console.log(appValue.pokes);
+  // console.log(appValue.pokes);
 
   return (
     <div>
@@ -19,15 +19,13 @@ function PokemonCollection() {
         {appValue.pokes &&
           appValue.pokes.map((poke) => {
             return (
-              true && (
-                <PokemonItem
-                  key={poke.id}
-                  id={poke.id}
-                  name={poke.name}
-                  abilities={poke.abilities}
-                  image={poke.sprites.front_default}
-                />
-              )
+              <PokemonItem
+                key={poke.id}
+                id={poke.id}
+                name={poke.name}
+                abilities={poke.abilities}
+                image={poke.sprites.front_default}
+              />
             );
           })}
       </div>
